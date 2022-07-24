@@ -18,7 +18,7 @@ This is an ExpressJs App build-in with Graphql and mongo. On this api, you can g
 
 ```
 PORT=8000
-MONGODB_URI=mongodb://localhost/<your-mongo-db>
+MONGODB_URI=YOUR_URI_MONGODB_CONNECTION
 ```
 
 ## Running the app
