@@ -1,3 +1,8 @@
+import { conectoToMongoDB } from './mongo/config';
 
 
-export default {}
+export default {
+  connectTo: {
+    mongo: conectoToMongoDB
+  }
+}
