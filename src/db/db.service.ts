@@ -1,8 +1,11 @@
-import { conectoToMongoDB } from './mongo/config';
-
+import { mongoService } from './mongo/config';
+import seedDbMongoService from './mongo/seeds/seed-db.service';
 
 export default {
-  connectTo: {
-    mongo: conectoToMongoDB
+  services: {
+    mongo: mongoService,
+  },
+  seedDb: {
+    mongo: seedDbMongoService
   }
 }
