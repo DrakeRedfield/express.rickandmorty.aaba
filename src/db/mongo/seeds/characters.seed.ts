@@ -1,4 +1,4 @@
-[
+export const characterData = [
   {
     "_id": "5d299c853d1d85c017cc3e01",
     "name": "Rick Sanchez",

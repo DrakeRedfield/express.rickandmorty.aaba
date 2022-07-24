@@ -1,4 +1,4 @@
-[
+export const episodeData = [
   {
     "_id": "5d299b853d1d85c017cc3e01",
     "name": "Pilot",

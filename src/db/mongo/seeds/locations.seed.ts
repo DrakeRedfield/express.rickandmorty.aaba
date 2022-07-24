@@ -1,4 +1,4 @@
-[
+export const locationData = [
   {
     "_id": "5d299a853d1d85c017cc3e01",
     "name": "Earth (C-137)",
