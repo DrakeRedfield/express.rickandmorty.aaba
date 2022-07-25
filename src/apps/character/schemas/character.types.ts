@@ -15,16 +15,6 @@ export const charactersResponseType = gql`
     created: String
   }
 
-  type locationData {
-    id: String
-    name: String
-  }
-
-  type episodeData {
-    id: String
-    name: String
-  }
-
   type charactersResponseType {
     info: paginationInfo
     results: [characterData]
