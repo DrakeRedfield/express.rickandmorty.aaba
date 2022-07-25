@@ -1,5 +1,5 @@
 import { gql } from "apollo-server-express";
-import { characterTypeDefList } from '../../apps/character/typeDefs/index';
+import { characterSchemasList } from '../../apps/character/schemas';
 
 export const typeDefs = [
   gql`
@@ -10,5 +10,5 @@ export const typeDefs = [
       prev: Int
     }
   `,
-  ...characterTypeDefList
+  ...characterSchemasList
 ];
