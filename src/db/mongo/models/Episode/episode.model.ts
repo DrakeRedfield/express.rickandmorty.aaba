@@ -12,4 +12,11 @@ const EpisodeSchema = new Schema({
   created: Date
 });
 
+EpisodeSchema.virtual('id').get(function () {
+  return this._id.toHexString();
+});
+EpisodeSchema.set('toJSON', {
+  virtuals: true
+});
+
 export const Episode = model<IEpisode>('Episode', EpisodeSchema);

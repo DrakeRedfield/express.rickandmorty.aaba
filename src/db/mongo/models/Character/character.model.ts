@@ -26,4 +26,11 @@ const CharacterSchema = new Schema({
   },
 });
 
+CharacterSchema.virtual('id').get(function () {
+  return this._id.toHexString();
+});
+CharacterSchema.set('toJSON', {
+  virtuals: true
+});
+
 export const Character = model<ICharacter>('Character', CharacterSchema);

@@ -9,7 +9,7 @@ class MongoDBService {
   }
 
   disconnect() {
-    mongoose.connection.close();
+    return mongoose.connection.close();
   }
 }
 

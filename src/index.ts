@@ -1,16 +1,32 @@
-import express, { Express, Request, Response } from 'express';
+import express, { Express } from 'express';
 import dotenv from 'dotenv';
 import dbService from './db/db.service';
+import { ApolloServer } from 'apollo-server-express';
+import { typeDefs } from './graphql/config';
+import { resolvers } from './graphql/config/resolvers';
 
 dotenv.config();
 
 const app: Express = express();
 const port = process.env.PORT;
 
-dbService.seedDb.mongo();
-dbService.services.mongo.connect();
+async function startServer() {
+  dbService.services.mongo.connect();
+  // await dbService.seedDb.mongo();
 
+  const apolloServer = new ApolloServer({
+    typeDefs,
+    resolvers: [
+      resolvers
+    ]
+  });
 
-app.listen(port, () => {
-  console.log(`[server]: Server is running at https://localhost:${port}`);
-});
+  await apolloServer.start()
+  apolloServer.applyMiddleware({ app });
+
+  app.listen(port, () => {
+    console.log(`[server]: Server is running at https://localhost:${port}`);
+  });
+}
+
+startServer();

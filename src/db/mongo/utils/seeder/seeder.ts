@@ -7,16 +7,12 @@ export class Seeder<T> {
     private readonly model: Model<T>
   ) { }
 
-  cleanModelData() {
-    this.model.remove({})
+  async cleanModelData() {
+    return this.model.deleteMany({}).exec();
   }
 
   async populateDb(data: any[]) {
-    mongoService.connect();
-
-    const populatedData = await this.model.insertMany(data)
-
-    mongoService.disconnect();
+    const populatedData = await this.model.insertMany(data);
     return populatedData;
   }
 }
