@@ -11,4 +11,11 @@ const locationSchema = new Schema({
   created: Date
 });
 
+locationSchema.virtual('id').get(function () {
+  return this._id.toHexString();
+});
+locationSchema.set('toJSON', {
+  virtuals: true
+});
+
 export const Location = model('Location', locationSchema);
