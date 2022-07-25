@@ -14,21 +14,22 @@ const seeds: { [key: string]: any[] } = {
   episode: episodeData
 }
 
-const populateModelDocument = <T>(model: Model<T>, seedName: any) => {
+const populateModelDocument = async <T>(model: Model<T>, seedName: any) => {
+  console.log('Populing ', seedName);
   const modelSeeder = new Seeder<T>(model);
   const documentData = seeds[seedName] || [];
-  modelSeeder.cleanModelData();
+  await modelSeeder.cleanModelData();
   return modelSeeder.populateDb(documentData);
 }
 
 export default async () => {
   const mongodbService = mongoService;
-  mongodbService.connect();
+  await mongodbService.connect();
 
   await Promise.all([
+    populateModelDocument(Episode, 'episode'),
     populateModelDocument(Character, 'character'),
     populateModelDocument(Location, 'location'),
-    populateModelDocument(Episode, 'episode'),
   ]);
 
   mongodbService.disconnect();
