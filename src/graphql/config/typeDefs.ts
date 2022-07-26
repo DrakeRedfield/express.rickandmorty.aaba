@@ -11,6 +11,11 @@ export const typeDefs = [
       count: Int
       prev: Int
     }
+
+    type baseJoin {
+      id: String
+      name: String
+    }
   `,
   ...characterSchemasList,
   ...episodeSchemasList,

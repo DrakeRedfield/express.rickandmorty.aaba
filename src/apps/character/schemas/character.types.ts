@@ -8,10 +8,10 @@ export const charactersResponseType = gql`
     species: String
     type: String
     gender: String
-    origin: locationData
-    location: locationData
+    origin: baseJoin
+    location: baseJoin
     image: String
-    episode: [episodeData]
+    episode: [baseJoin]
     created: String
   }
 

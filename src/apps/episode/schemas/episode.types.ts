@@ -6,7 +6,7 @@ export const episodesResponseType = gql`
     name: String
     air_date: String
     episode: String
-    characters: [characterData]
+    characters: [baseJoin]
     created: String
   }
 

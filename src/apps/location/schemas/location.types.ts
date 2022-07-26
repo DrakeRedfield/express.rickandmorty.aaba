@@ -6,7 +6,7 @@ export const locationResponseType = gql`
     name: String
     type: String
     dimension: String
-    residents: [characterData]
+    residents: [baseJoin]
     created: String
   }
 
