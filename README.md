@@ -32,6 +32,9 @@ $ npm run start
 
 # development mode
 $ npm run start:dev
+
+# run seeder
+$ npm run seed:db:mongo
 ```
 
 ## Keep in touch
