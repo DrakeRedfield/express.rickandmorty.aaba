@@ -12,7 +12,6 @@ const port = process.env.PORT;
 
 async function startServer() {
   dbService.services.mongo.connect();
-  // await dbService.seedDb.mongo();
 
   const apolloServer = new ApolloServer({
     typeDefs,
