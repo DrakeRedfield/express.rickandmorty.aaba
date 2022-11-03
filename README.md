@@ -7,7 +7,7 @@ This is an ExpressJs App build-in with Graphql and mongo. On this api, you can g
 * Episodes
 * Locations
 
-**Nota:** For now, just exist Read function from CRUD functionability.
+**Nota:** For now, just there Read function from CRUD functionability.
 
 ## Instalation
 
